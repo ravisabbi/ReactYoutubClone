@@ -1,0 +1,181 @@
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-image: linear-gradient(#060606, white);
+  height: 100vh;
+  background-size: cover;
+}
+.card-white {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 75%;
+  width: 75%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  background-size: cover;
+  border-radius: 20px;
+  background-image: url("https://yt3.ggpht.com/F2btdvfK4siRfI9Ghg7jR87n3Al3os9YMaerY03n73ytD2frI6YKPzwdwxtn973rxxUS2lY_rw=s88-c-k-c0x00ffffff-no-rj");
+  /* background-image: url("../images/background.jpg"); */
+}
+.blur-container {
+  position: relative;
+  width: 70%;
+  height: 90%;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+.heading-login {
+  color: white;
+}
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-color: black;
+}
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  padding: 10px;
+
+  border-radius: 20px;
+}
+.signup-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 20vw;
+}
+.signup-heading {
+  font-size: x-large;
+}
+.signup-label {
+  font-size: small;
+  font-weight: bold;
+}
+.submit-button {
+  margin-top: 10px;
+  color: white;
+  width: 100%;
+  height: 60px;
+  padding-right: 10px;
+  background-color: #161618;
+  border-radius: 5px;
+}
+.input-bar {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #080229;
+  border-radius: 5px;
+}
+.signup-para {
+  padding-bottom: 10px;
+}
+.or-container {
+  display: flex;
+  justify-content: center;
+}
+.google-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  color: #080229;
+  width: 100%;
+  height: 60px;
+  padding-right: 10px;
+  background-color: white;
+  border: 2px solid #080229;
+  border-radius: 5px;
+}
+.g-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.p-google {
+  margin-left: 10px;
+}
+@media only screen and (max-width: 800px) {
+  .card-white {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    width: 75%;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 100%;
+    padding: 10px;
+
+    border-radius: 20px;
+  }
+
+  .signup-card {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+  }
+  .input-bar {
+    width: 100%;
+    height: 30%;
+    border: 1px solid #080229;
+    border-radius: 5px;
+  }
+  .google-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color: #080229;
+    width: 100%;
+    height: 30%;
+    padding-right: 10px;
+    background-color: white;
+    border: 2px solid #080229;
+    border-radius: 5px;
+  }
+}
+
+.linkSignUp {
+  text-decoration: none;
+  color: #060606;
+}

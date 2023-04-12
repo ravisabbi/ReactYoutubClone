@@ -1,0 +1,37 @@
+  const successView = () => (
+    <AppContext.Consumer>
+      {(value) => {
+        const { searchInput } = value;
+
+        const updatedVideoList = videoList.items.map((eachItem) => {
+          const obj = {
+            thumbnailUrl: eachItem.snippet.thumbnails.high.url,
+            title: eachItem.snippet.title,
+            channelId: eachItem.snippet.channelId,
+            publishedAt: eachItem.snippet.publishedAt,
+            videoId: eachItem.id.videoId,
+            channelTitle: eachItem.snippet.channelTitle,
+          };
+          return obj;
+        });
+
+        const filterdList = updatedVideoList.filter((eachItem) =>
+          eachItem.title.toLowerCase().includes(searchInput.toLowerCase())
+        );
+        console.log(searchInput);
+        return (
+          <div className="home-container">
+            <Header />
+
+            <div className="home-card-container">
+              <ul className="cards-container">
+                {filterdList.map((eachObj) => (
+                  <Card cardDetails={eachObj} key={eachObj.videoId} />
+                ))}
+              </ul>
+            </div>
+          </div>
+        );
+      }}
+    </AppContext.Consumer>
+  );

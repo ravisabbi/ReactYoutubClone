@@ -1,0 +1,59 @@
+.header-bg {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 65px;
+  box-sizing: border-box;
+  right: 0;
+}
+.searchContainer {
+  width: 40%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchInput {
+  width: 80%;
+  height: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0;
+}
+.submitInput {
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 10%;
+  height: 100%;
+  border-width: 0;
+  border-left-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.avatar-container {
+}
+.avatar-logo {
+  width: 100%;
+  height: 100%;
+}
+.youtube-container {
+  background-color: red;
+  padding-right: 1%;
+  padding-left: 1%;
+  border-radius: 5px;
+}
+.youtube-logo {
+  width: 100%;
+  height: 100%;
+}
