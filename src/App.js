@@ -5,27 +5,21 @@ import NotFound from "./components/NotFound";
 import HomePage from "./components/HomePage";
 import SignUp from "./components/SignUp";
 import VideoPlayer from "./components/VideoPlayer";
-import Comments from "./components/Comments";
+//import ProtectedRoute from "./components/ProtectedRoute";
 // import Header from "./components/Header";
 
 import AppContext from "./context/AppContext";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
-  const [channelId,setChannelId] = useState("");
-  const [videoId,setVideoId] = useState("");
+  const [filteredTitleList,setFilteredTitleList]=useState([]);
   
-
   const onChangeSearchInput = (v) => {
     setSearchInput(v);
   };
-
-  const onChangeChannelId = (id) => {
-       setChannelId(id)
-  }
-
-  const onChangeVideoId = (id) => {
-         setVideoId(id);
+ 
+  const dropDownList=(data)=>{
+    setFilteredTitleList(data)
   }
 
   return (
@@ -33,20 +27,15 @@ function App() {
       value={{
         searchInput,
         onChangeSearchInput,
-        channelId,
-        onChangeChannelId,
-        videoId,
-        onChangeVideoId
+        dropDownList,
+        filteredTitleList
       }}
     >
       <Routes>
-        {/* <Route path="/" element={<Header />} /> */}
-        <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path = "/videoplayer" element = {<VideoPlayer/>}/>
-        <Route path = "/comments" element = {<Comments/>}/> 
-
+        <Route exact path="/signup" element={<SignUp />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path = "/:channelId/:videoId" element = {<VideoPlayer/>}/>
         <Route path="/notfound" element={<NotFound />} />
         
       </Routes>

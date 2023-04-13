@@ -1,4 +1,4 @@
-import React, { useState ,useContext} from "react";
+import React, { useState } from "react";
 import { formatDistance } from "date-fns";
 import { Link } from "react-router-dom";
 import "./index.css";
@@ -11,12 +11,12 @@ const classNamesList = ["orange", "blue", "red", "green", "dark", "yellow"];
 const Card = (props) => {
   const { cardDetails } = props;
  
-  const {onChangeChannelId, onChangeVideoId} = useContext(AppContext)
+  // const {onChangeChannelId, onChangeVideoId} = useContext(AppContext)
 
-  const  onUpdateChannelIdAndVideoId = () => {
-  onChangeChannelId(channelId);
-  onChangeVideoId(videoId);
-  }
+  // const  onUpdateChannelIdAndVideoId = () => {
+  // onChangeChannelId(channelId);
+  // onChangeVideoId(videoId);
+  // }
 
   // console.log(cardDetails);
   const { thumbnailUrl, videoId, title, channelId, channelTitle, publishedAt } =
@@ -37,7 +37,7 @@ const Card = (props) => {
   return (
     <li className="card">
       <div className="card-image-container">
-        <Link to="/videoplayer" onClick={onUpdateChannelIdAndVideoId}>
+        <Link to={`/${channelId}/${videoId}`}>
           <img src={thumbnailUrl} alt={videoId} className="card-image" />
         </Link>
       </div>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./index.css";
 const Comment = (props) => {
   const { comment, addReply } = props;
-  console.log(comment);
+  // console.log(comment);
   const [replyText, setReplyText] = useState("");
   const [showReplyBox, setShowReplyBox] = useState(false);
   // const inputEl = useRef(null);

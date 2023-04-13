@@ -1,3 +1,6 @@
+*{
+  font-family: "Roboto";
+}
 .bg-container {
   display: flex;
   flex-direction: column;
@@ -80,11 +83,13 @@
 .signup-label {
   font-size: small;
   font-weight: bold;
+  
 }
 .submit-button {
   margin-top: 10px;
   color: white;
   width: 100%;
+  font-size: 15px;
   height: 60px;
   padding-right: 10px;
   background-color: #161618;
@@ -95,6 +100,7 @@
   height: 40px;
   border: 1px solid #080229;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 .signup-para {
   padding-bottom: 10px;
@@ -178,4 +184,10 @@
 .linkSignUp {
   text-decoration: none;
   color: #060606;
+}
+.error-msg{
+  font-size: 15px;
+  color:red;
+  font-family: "Robtot";
+  margin: 0px;
 }

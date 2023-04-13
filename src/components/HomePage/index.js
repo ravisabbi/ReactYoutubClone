@@ -1,5 +1,5 @@
-import React, { useEffect, useState,useContext } from "react";
-import Loader from 'react-loader-spinner';
+import React, { useEffect, useState, useContext } from "react";
+import Loader from "react-loader-spinner";
 import Card from "../Card";
 import Header from "../Header";
 import "./index.css";
@@ -912,58 +912,80 @@ const url = [
 const HomePage = () => {
   const [videoList, setVideoList] = useState(url[0]);
   const [apiStaus, setApiStaus] = useState(false);
-  const { searchInput } = useContext(AppContext);
+  // use context for global store
+  const { searchInput, dropDownList } = useContext(AppContext);
+  
 
+  const updatedVideoList = videoList.items.map((eachItem) => {
+    const obj = {
+      thumbnailUrl: eachItem.snippet.thumbnails.high.url,
+      title: eachItem.snippet.title,
+      channelId: eachItem.snippet.channelId,
+      publishedAt: eachItem.snippet.publishedAt,
+      videoId: eachItem.id.videoId,
+      channelTitle: eachItem.snippet.channelTitle,
+    };
+    return obj;
+  });
+  const filterdList = updatedVideoList.filter((eachItem) => {
+    return eachItem.title.toLowerCase().includes(searchInput.toLowerCase());
+  });
 
- 
+  const SetFilteredData = () => {
+    console.log("PRINT");
+    dropDownList(filterdList);
+  };
+
+  
+
   useEffect(() => {
     setApiStaus(true);
     const getVideoList = () => {
       setVideoList(url[0]);
     };
     getVideoList();
+    SetFilteredData();
   },[]);
 
+  //setFilteredTitleList(...filterdList)
 
+  // const loadingView = () => (
+//   <div className="spinner-container">
+//       <Loader type="ThreeDots" color={"#123abc"}/>
+//   </div>)
 
-  const successView = () => {
+const failureView = () => (
+  <div className="failure-view-container">
+    <h1 className="failure-view-text">Something Went Wrong!</h1>
+    <button className="retry-btn">Retry</button>
+  </div>
+)
 
-        const updatedVideoList = videoList.items.map((eachItem) => {
-          const obj = {
-            thumbnailUrl: eachItem.snippet.thumbnails.high.url,
-            title: eachItem.snippet.title,
-            channelId: eachItem.snippet.channelId,
-            publishedAt: eachItem.snippet.publishedAt,
-            videoId: eachItem.id.videoId,
-            channelTitle: eachItem.snippet.channelTitle,
-          };
-          return obj;
-        });
+const successView = () => (<div className="home-card-container">
+<ul className="cards-container">
+  {filterdList &&
+    filterdList.map((eachObj) => (
+      <Card cardDetails={eachObj} key={eachObj.videoId} />
+    ))}
+</ul>
+</div>)
 
-        const filterdList = updatedVideoList.filter((eachItem) =>
-          eachItem.title.toLowerCase().includes(searchInput.toLowerCase())
-        );
-         
-        return (
-          <div className="home-container">
-            <Header />
-            <div className="home-card-container">
-              <ul className="cards-container">
-                {filterdList.map((eachObj) => (
-                  <Card cardDetails={eachObj} key={eachObj.videoId} />
-                ))}
-              </ul>
-            </div>
-          </div>
-        );
-  };
-
-  const loadingView = () => (
-                 <div className="spinner-container">
-                     <Loader type="ThreeDots" color={"#123abc"}/> 
-                 </div>)
-
-  return apiStaus ? successView() : loadingView();
+  return (
+    <div className="home-container">
+      <Header />
+      {/* <div className="home-card-container">
+        <ul className="cards-container">
+          {filterdList &&
+            filterdList.map((eachObj) => (
+              <Card cardDetails={eachObj} key={eachObj.videoId} />
+            ))}
+        </ul>
+      </div> */}
+      {!apiStaus ? failureView (): successView()}
+    </div>
+  );
 };
 
 export default HomePage;
+
+
