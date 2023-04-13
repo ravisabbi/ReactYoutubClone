@@ -5,6 +5,7 @@ import NotFound from "./components/NotFound";
 import HomePage from "./components/HomePage";
 import SignUp from "./components/SignUp";
 import VideoPlayer from "./components/VideoPlayer";
+import Comments from "./components/Comments";
 // import Header from "./components/Header";
 
 import AppContext from "./context/AppContext";
@@ -44,7 +45,10 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path = "/videoplayer" element = {<VideoPlayer/>}/>
+        <Route path = "/comments" element = {<Comments/>}/> 
+
         <Route path="/notfound" element={<NotFound />} />
+        
       </Routes>
     </AppContext.Provider>
   );

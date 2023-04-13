@@ -1,0 +1,71 @@
+.user-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    font-weight: 700;
+    font-size: 16px;
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+}
+.comments-main-container{
+    background-color: black;
+    color: #ffffff;
+    width: 60%;
+    min-width: 100vh;
+}
+.comment-text-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: space-between;
+}
+.user-logo-input-element-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.comment-input-element{
+    width: 50%;
+    border: solid 0px; 
+    font-size: 17px;
+    border-bottom-width: 2px;
+    outline: none;
+    border-color: #272727;
+    flex-grow: 1;
+    background-color: transparent;
+    font-weight: 800;
+    color:#ffffff;
+}
+.cancel-btn{
+    font-size: 15px;
+    color:#ffffff;
+    background-color: #272727;
+    
+    border-radius:9px;
+    height: 40px;
+    width:130px;
+    margin-right: 20px;
+    border: none;
+}
+.comment-btn{
+    font-size: 15px;
+    color:#ffffff;
+    background-color: #0a7694;
+    border-radius:9px;
+    height: 40px;
+    width:130px;
+    font-weight: bold;
+    border: none;
+
+}
+
+.comment-btns-container{
+   display: flex;
+   justify-content: flex-end;
+   align-self: flex-end;
+   width: 60%;
+}

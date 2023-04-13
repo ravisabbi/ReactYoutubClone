@@ -1,0 +1,97 @@
+.reply-text-input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: space-between;
+}
+
+.reply-user-logo-input-element-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.user-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    font-weight: 700;
+    font-size: 16px;
+}
+.reply-input-element{
+    width: 50%;
+    border: solid 0px; 
+    font-size: 17px;
+    border-bottom-width: 2px;
+    outline: none;
+    border-color: #272727;
+    flex-grow: 1;
+    background-color: transparent;
+    font-weight: 800;
+    color:#ffffff;
+}
+
+.cancel-btn{
+    font-size: 15px;
+    color:#ffffff;
+    background-color: #272727;
+    
+    border-radius:9px;
+    height: 40px;
+    width:130px;
+    margin-right: 20px;
+    border: none;
+}
+.reply-btn{
+    font-size: 15px;
+    color:#ffffff;
+    background-color: #0a7694;
+     
+    border-radius:9px;
+    height: 40px;
+    width:130px;
+    font-weight: bold;
+    border: none;
+
+}
+.reply-btns-container{
+   display: flex;
+   justify-content: flex-end;
+   align-self: flex-end;
+   width: 60%;
+}
+.comment-reply-item-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.c-text{
+    font-family: "Roboto";
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    color:#ffffff;
+}
+
+.replied-user-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    font-weight: 700;
+    font-size: 15px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+}
+
+.replied-comment-reply-btn{
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
